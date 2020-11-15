@@ -54,7 +54,7 @@ class Main:
         # self.procces = ["%.0f%%" % (100 * x/i) for x, i in n_fact, n_plan]
         self.v_fact = v_fact  # текущий фактический выполненный объем работ
         self.v_rest = [1 - (v_fact[i] / v_plan[i]) for i in range(len(v_fact))]  # остаток от объема работ в %
-        self.prognos_alarm = ['red' if (self.rest_dt[i] / self.v_rest[i]) < 1 else 'green' for i in
+        self.prognos_alarm = ['red' if (self.rest_dt[i] + self.v_rest[i]) < 1 else 'green' for i in
                               range(len(self.id))]  # если < 1   то alarm = "red"] # если < 1#   то alarm = "red"
         td = datetime.date.today().day
         self.actuall_work = [
