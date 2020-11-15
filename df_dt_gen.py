@@ -91,7 +91,7 @@ class Main:
     #  self.prognos_alarm = lambda x, y: 'red' * (x / y < 1)(rest_dt, v_rest)  # если < 1   то alarm = "red"
 
     def prohnos_alarm(self):
-        # self.prognos_alarm = ['red' if (self.rest_dt[i] / self.v_rest[i]) < 1 else 'green' for i in
+        # self.prognos_alarm = ['red' if (self.rest_dt[i] + self.v_rest[i]) < 1 else 'green' for i in
         #                      range(len(id))]  # если < 1   то alarm = "red"]
         return self.prognos_alarm
 
